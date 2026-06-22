@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="company.css" />
+  </head>
+  <body>
+    <div class="profile-container">
+      <a href="index.html" class="back-btn">&larr; Back to Search</a>
+
+      <div id="loading-indicator" class="loading-box">
+        <div class="spinner"></div>
+        <p>Loading company financial history...</p>
+      </div>
+
+      <div id="profile-content" class="hidden">
+        <div class="header-card">
+          <img id="company-logo" src="" alt="Company Logo" />
+          <div>
+            <h1 id="company-name">Company Name</h1>
+            <span id="company-industry" class="badge">Industry</span>
+          </div>
+        </div>
+
+        <div class="price-section">
+          <h2>Stock Price: <span id="stock-price">$0.00</span></h2>
+          <span id="price-change" class="change-indicator">0.00%</span>
+        </div>
+
+        <p id="company-description" class="description"></p>
+
+        <p>
+          <strong>Official Website:</strong>
+          <a id="company-website" href="#" target="_blank">Visit Site</a>
+        </p>
+
+        <hr />
+
+        <div class="chart-container">
+          <h3>Stock Price History</h3>
+          <canvas id="history-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="company.js"></script>
+  </body>
+</html>

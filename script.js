@@ -5,13 +5,30 @@ const searchButton = document.getElementById("search-button");
 const loadingIndicator = document.getElementById("loading-indicator");
 const resultsList = document.getElementById("results-list");
 
+function debounce(func, delay) {
+  let timeoutId;
+
+  return function (...args) {
+    // If the user is still typing, cancel the previous scheduled API call
+    clearTimeout(timeoutId);
+
+    // Schedule a new API call after the delay has passed
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
 searchButton.addEventListener("click", performSearch);
+
+searchInput.addEventListener("input", debounce(performSearch, 500));
 
 async function performSearch() {
   const query = searchInput.value.trim();
 
   if (!query) {
-    alert("Please enter a search term");
+    resultsList.innerHTML = "";
+    loadingIndicator.classList.add("hidden");
     return;
   }
 
