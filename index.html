@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Exchange Search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-page-container">
+      <h1>NASDAQ Stock Search</h1>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter company name or symbol (e.g., AAPL)..."
+        />
+        <button id="search-button">Search</button>
+      </div>
+
+      <div id="loading-indicator" class="hidden">
+        <div class="spinner"></div>
+        <p>Searching stocks...</p>
+      </div>
+
+      <ul id="results-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
